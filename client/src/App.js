@@ -1,11 +1,16 @@
-
+import { useGetAllProductsQuery,useGetProductQuery } from "./features/apiSlice";
 function App() {
-  return (
-    <div className="App">
-    hello my name is sameer
-    
-    </div>
-  );
+  const { data:allProductsData,error,isError,isLoading } = useGetAllProductsQuery();
+  const { data:singleProductData } = useGetProductQuery("iphone");
+  {/* console.log(useGetAllProductsQuery)
+ console.log(useGetProductQuery) */}
+ console.log(allProductsData)
+ console.log(singleProductData) 
+  if (isLoading) return <h1>isLoading</h1>
+  return <>
+ 
+  Data HAHA
+  </>;
 }
 
 export default App;
